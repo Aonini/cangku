@@ -1,0 +1,65 @@
+
+】<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			焦点事件
+				用在表单元素上  a
+
+			表单元素获取焦点
+				1. 点击获取焦点
+				2. tab键获取焦点
+
+			只能有一个元素获取焦点，一个元素获取焦点必然有另一个元素失去焦点
+			默认的焦点是在document上
+
+			获取焦点
+				onfocus
+			失去焦点
+				onblur
+
+		</script>
+	</head>
+
+	<body>
+		
+		<input type="" name="" id="text1">
+		<input type="" name=""  id="text2">
+		<input type="checkbox" name=""  id="checkbox1">
+		<input type="radio" name="">
+		<a href="http:www.baidu.com" id="a1">baid</a>
+		<script>
+			text1.onfocus = function (){
+				console.log('text1获取焦点');	
+			}
+			text1.onblur = function (){
+				console.log('text1失去   焦点');	
+			}
+			text2.onfocus = function (){
+				console.log('text2获取焦点');	
+			}
+			text2.onblur = function (){
+				console.log('text2失去   焦点');	
+			}
+
+			checkbox1.onfocus = function (){
+				console.log('checkbox1获取焦点');	
+			}
+			checkbox1.onblur = function (){
+				console.log('checkbox1失去   焦点');	
+			}
+
+			a1.onfocus = function (){
+				console.log('a1获取焦点');	
+			}
+			a1.onblur = function (){
+				console.log('a1失去   焦点');	
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+$ git status
+On branch master  // 分支 在主分支
+
+No commits yet  // 没有提交到版本库
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)  // 已经添加到缓存区，使用这个命令从缓存区删除
+
+        new file:   index.html
+
+Untracked files: // 未跟踪 未添加到缓存区
+  (use "git add <file>..." to include in what will be committed)
+  提醒使用这个命令添加到缓存区
+
+        a.txt

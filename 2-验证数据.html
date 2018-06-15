@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			焦点事件
+				用在表单元素上  a
+
+			表单元素获取焦点
+				1. 点击获取焦点
+				2. tab键获取焦点
+
+			只能有一个元素获取焦点，一个元素获取焦点必然有另一个元素失去焦点
+			默认的焦点是在document上
+
+			获取焦点
+				onfocus
+			失去焦点
+				onblur
+
+		</script>
+	</head>
+
+	<body>
+		
+		<input type="" name="" id="text1">
+		<span id="tip"></span>
+		<script>
+			text1.onfocus = function (){
+				console.log('text1获取焦点');	
+				tip.innerText = '请输入5-10位的用户名'
+				tip.style.background = '';
+			}
+			text1.onblur = function (){
+				console.log('text1失去   焦点');
+				tip.innerText = '输入错误请重新输入'	
+				tip.style.background = 'red';
+			}
+		</script>
+	</body>
+</html>

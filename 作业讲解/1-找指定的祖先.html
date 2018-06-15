@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body class="abc">
+		<div class="miaov">
+			<ul>
+				<li id="ketang">
+					<p>
+						<span id="hello">hello</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<script>
+
+
+			
+
+
+
+
+
+			// 找到指定元素指定标识的祖先节点
+			//参数 el 指定元素 flag标识 祖先节点标识 id class tagName
+			function parents(el,flag){
+				var firstChar = flag.charAt(0);  // . # 
+				var fullChar = flag.slice(1);  // 名字
+				var parent = el.parentNode;
+				if(firstChar === '.'){ //class
+					while(parent !== document && !parent.classList.contains(fullChar)){
+						parent = parent.parentNode;
+					}
+				}else if(firstChar === '#'){
+					while(parent !== document && parent.id !== fullChar){
+						parent = parent.parentNode;
+					}
+				}else{
+					while(parent !== document && parent.nodeName.toLowerCase() !== flag){
+						parent = parent.parentNode;
+					}
+				}
+
+				return parent === document ? null : parent;
+			}
+
+			var hello = document.querySelector('#hello');
+
+			console.log(parents(hello,'li'));
+			console.log(parents(hello,'.abc'));
+			console.log(parents(hello,'#ketang'));
+			console.log(parents(hello,'span'));
+
+
+			// 找所有的父级
+
+			/*var p = hello.parentNode;
+
+			while( p !== document && !p.classList.contains('miaov')){
+
+				p = p.parentNode
+				
+			}
+
+			var result = p === document ? null : p
+
+			console.log(result);*/
+
+		</script>
+	</body>
+</html>
