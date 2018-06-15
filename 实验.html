@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        height: 200px;
+        width: 200px;
+        border:2px solid #000;
+    }
+    .yellow{
+        background: yellow;
+    }
+    </style>
+</head>
+<body>
+    <button id="button">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+         $("div").css("display","none")
+        console.log($("button"))
+        $("button").click(function(){
+            var i=$(this).index()
+            $("button").removeClass("yellow")
+            $(this).addClass("yellow")
+            $("div").css("display","none")
+            $("div").eq(i).css("display","block")
+            console.log("div")
+
+
+        })
+    </script>
+</body>
+</html>
